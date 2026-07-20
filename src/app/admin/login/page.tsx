@@ -28,6 +28,9 @@ export default function AdminLoginPage() {
         return;
       }
 
+      if (res.data.token) {
+        localStorage.setItem('auth_token', res.data.token);
+      }
       login(res.data);
       toast.success("Welcome to the Admin Portal");
       window.location.href = '/admin';

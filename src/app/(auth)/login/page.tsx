@@ -31,6 +31,9 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       const res = await api.post('/auth/login', { emailOrUsername: email, password });
+      if (res.data.token) {
+        localStorage.setItem('auth_token', res.data.token);
+      }
       login(res.data);
       toast.success("Welcome back!");
       window.location.href = res.data.role === 'Customer' ? '/home' : '/admin';

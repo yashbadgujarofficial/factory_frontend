@@ -65,6 +65,7 @@ export function AuthProvider({ children, authType = 'customer' }: { children: Re
   const logout = async () => {
     try {
       await api.post('/auth/logout');
+      localStorage.removeItem('auth_token');
       setUser(null);
       window.location.href = authType === 'admin' ? '/admin/login' : '/';
     } catch (error) {
