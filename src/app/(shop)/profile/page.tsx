@@ -5,7 +5,7 @@ import { useAuth } from "@/providers/AuthProvider";
 import { ProtectedRoute } from "@/components/shared/ProtectedRoute";
 import { User, Building, MapPin, Mail, Phone, Calendar, Clock, Download, FileText, CheckCircle2, Package, Search } from "lucide-react";
 import { FadeIn, SlideUp } from "@/components/animations/MotionWrappers";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from "date-fns";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
@@ -153,11 +153,9 @@ function InvoicesTab() {
           )}
           
           <div className="mt-auto">
-            <Button variant="outline" className="w-full gap-2" asChild>
-              <a href={invoice.images?.[0]} target="_blank" rel="noreferrer">
-                <FileText size={16} /> View First Document
-              </a>
-            </Button>
+            <a href={invoice.images?.[0]} target="_blank" rel="noreferrer" className={buttonVariants({ variant: "outline", className: "w-full gap-2" })}>
+              <FileText size={16} /> View First Document
+            </a>
           </div>
         </div>
       ))}

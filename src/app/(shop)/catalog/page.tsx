@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 import { ProductCard } from "@/components/product/ProductCard";
@@ -12,7 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ProtectedRoute } from "@/components/shared/ProtectedRoute";
 import { useSearchParams } from "next/navigation";
 
-export default function CatalogPage() {
+function CatalogContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category");
   const initialSearch = searchParams.get("search");
@@ -160,5 +160,13 @@ export default function CatalogPage() {
         </div>
       </div>
     </ProtectedRoute>
+  );
+}
+
+export default function CatalogPage() {
+  return (
+    <Suspense fallback={<div className="p-20 text-center text-muted-foreground">Loading catalog...</div>}>
+      <CatalogContent />
+    </Suspense>
   );
 }

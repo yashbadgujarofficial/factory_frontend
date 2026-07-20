@@ -5,7 +5,7 @@ import { ProtectedRoute } from "@/components/shared/ProtectedRoute";
 import { FadeIn, SlideUp, HoverLift, StaggerContainer, StaggerItem } from "@/components/animations/MotionWrappers";
 import { ShoppingBag, FileText, User, ArrowRight, Package } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export default function CustomerDashboard() {
   const { user } = useAuth();
@@ -40,9 +40,9 @@ export default function CustomerDashboard() {
                 </div>
                 <h3 className="text-lg font-heading font-semibold mb-2">My Orders</h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-1">Track your active orders and view your purchase history.</p>
-                <Button variant="ghost" className="w-full justify-between" asChild>
-                  <Link href="/profile">View Orders <ArrowRight className="w-4 h-4" /></Link>
-                </Button>
+                <Link href="/profile" className={buttonVariants({ variant: "ghost", className: "w-full justify-between" })}>
+                  View Orders <ArrowRight className="w-4 h-4" />
+                </Link>
               </HoverLift>
             </StaggerItem>
             
@@ -53,9 +53,9 @@ export default function CustomerDashboard() {
                 </div>
                 <h3 className="text-lg font-heading font-semibold mb-2">Quotations</h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-1">Check the status of your pricing requests and accept quotes.</p>
-                <Button variant="ghost" className="w-full justify-between" asChild>
-                  <Link href="/profile">View Quotations <ArrowRight className="w-4 h-4" /></Link>
-                </Button>
+                <Link href="/profile" className={buttonVariants({ variant: "ghost", className: "w-full justify-between" })}>
+                  View Quotations <ArrowRight className="w-4 h-4" />
+                </Link>
               </HoverLift>
             </StaggerItem>
 
@@ -66,9 +66,9 @@ export default function CustomerDashboard() {
                 </div>
                 <h3 className="text-lg font-heading font-semibold mb-2">Product Catalog</h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-1">Browse our latest collection and build your next order.</p>
-                <Button variant="ghost" className="w-full justify-between" asChild>
-                  <Link href="/catalog">Explore Catalog <ArrowRight className="w-4 h-4" /></Link>
-                </Button>
+                <Link href="/catalog" className={buttonVariants({ variant: "ghost", className: "w-full justify-between" })}>
+                  Explore Catalog <ArrowRight className="w-4 h-4" />
+                </Link>
               </HoverLift>
             </StaggerItem>
 
@@ -79,9 +79,9 @@ export default function CustomerDashboard() {
                 </div>
                 <h3 className="text-lg font-heading font-semibold mb-2">Account Settings</h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-1">Update your billing address, contact info, and profile details.</p>
-                <Button variant="ghost" className="w-full justify-between" asChild>
-                  <Link href="/profile">Manage Account <ArrowRight className="w-4 h-4" /></Link>
-                </Button>
+                <Link href="/profile" className={buttonVariants({ variant: "ghost", className: "w-full justify-between" })}>
+                  Manage Account <ArrowRight className="w-4 h-4" />
+                </Link>
               </HoverLift>
             </StaggerItem>
           </StaggerContainer>
