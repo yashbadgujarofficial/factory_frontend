@@ -21,7 +21,7 @@ export default function CustomerDashboard() {
           <div className="container mx-auto px-4 md:px-6">
             <FadeIn>
               <h1 className="text-3xl md:text-5xl font-heading font-bold text-sidebar-foreground mb-4">
-                Welcome back, {user.name.split(' ')[0]}!
+                Welcome back, {user.name ? user.name.split(' ')[0] : 'User'}!
               </h1>
               <p className="text-sidebar-foreground/70 text-lg max-w-2xl">
                 Manage your orders, view quotations, and discover new products in our catalog.
