@@ -35,7 +35,7 @@ export function Navbar() {
             <Menu className="h-6 w-6" />
           </Button>
           <HoverLift>
-            <Link href={user ? "/catalog" : "/"} className="flex items-center gap-2 group">
+            <Link href={user ? "/home" : "/"} className="flex items-center gap-2 group">
               <div className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center font-heading font-bold text-lg group-hover:scale-105 transition-transform">
                 {(settings?.companyName || "F")[0]}
               </div>
@@ -44,7 +44,7 @@ export function Navbar() {
           </HoverLift>
           
           <nav className="hidden md:flex gap-8 ml-8">
-            <Link href={user ? "/catalog" : "/"} className="text-sm font-medium hover:text-primary transition-colors relative group">
+            <Link href={user ? "/home" : "/"} className="text-sm font-medium hover:text-primary transition-colors relative group">
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </Link>
@@ -52,11 +52,10 @@ export function Navbar() {
               Products
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="/catalog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
+            <Link href="/collections" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group">
               Collections
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </Link>
-
           </nav>
         </div>
 
